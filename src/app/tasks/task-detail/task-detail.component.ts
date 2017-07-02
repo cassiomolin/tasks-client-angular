@@ -14,11 +14,11 @@ import {CustomValidators} from "../custom-validators";
 export class TaskDetailComponent implements OnInit {
 
   @Input()
-  private task: Task;
+  task: Task;
 
-  private taskForm: FormGroup;
-  private completedFormControl: FormControl;
-  private descriptionFormControl: FormControl;
+  taskForm: FormGroup;
+  completedFormControl: FormControl;
+  descriptionFormControl: FormControl;
 
   constructor(private taskService: TaskService, private formBuilder: FormBuilder) {
     this.completedFormControl = formBuilder.control(false);
