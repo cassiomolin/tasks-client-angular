@@ -1,4 +1,4 @@
-import { TasksFrontendPage } from './app.po';
+import {TasksFrontendPage} from "./app.po";
 
 describe('tasks-frontend App', () => {
   let page: TasksFrontendPage;

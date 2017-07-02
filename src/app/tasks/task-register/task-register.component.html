@@ -1,0 +1,8 @@
+<form [formGroup]="taskForm" (ngSubmit)="createTask()">
+
+  <input formControlName="description" autofocus #description/>
+  <div *ngIf="descriptionFormControl.dirty && descriptionFormControl.hasError('required')">It must not be empty</div>
+
+  <button type="submit" [disabled]="taskForm.invalid">Register</button>
+
+</form>
