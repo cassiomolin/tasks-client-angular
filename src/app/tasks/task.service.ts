@@ -31,7 +31,6 @@ export class TaskService {
   createTask(task: Task): Observable<Task> {
 
     task.completed = false;
-    console.log(task);
 
     return this.http.post(`${environment.apiUrl}/tasks`, JSON.stringify(task), {headers: this.headers})
       .map(response => {

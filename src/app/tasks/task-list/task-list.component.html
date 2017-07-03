@@ -1,6 +1,8 @@
-<app-task-detail *ngFor="let task of tasks | taskStatus:filter" [task]="task"></app-task-detail>
+<div class="tasks">
+  <app-task-detail *ngFor="let task of tasks | taskStatus:filter" [task]="task"></app-task-detail>
+</div>
 
-<form>
+<form class="filter-options">
   <input id="show-all"  type="radio" [(ngModel)]="filter" name="filter" value="all"/><label for="show-all">Show all</label>
   <input id="show-todo" type="radio" [(ngModel)]="filter" name="filter" value="todo"><label for="show-todo">Show todo</label>
   <input id="show-done" type="radio" [(ngModel)]="filter" name="filter" value="done"><label for="show-done">Show done</label>

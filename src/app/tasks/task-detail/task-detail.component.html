@@ -1,11 +1,10 @@
-<form [formGroup]="taskForm">
+<form class="task" [formGroup]="taskForm">
 
-  <input id="complete-task-{{task.id}}" [(ngModel)]="task.completed" formControlName="completed" type="checkbox"/>
-  <label for="complete-task-{{task.id}}">Complete task</label>
+  <input type="checkbox" id="complete-task-{{task.id}}" [(ngModel)]="task.completed" formControlName="completed"/>
+  <label for="complete-task-{{task.id}}"></label>
+  <input type="text" placeholder="Enter a description" [(ngModel)]="task.description" formControlName="description"/>
+  <button type="button" class="remove" (click)="deleteTask(task)"></button>
 
-  <input [(ngModel)]="task.description" formControlName="description"/>
-  <div *ngIf="descriptionFormControl.dirty && descriptionFormControl.hasError('required')">It must not be empty</div>
-
-  <button type="button" (click)="deleteTask(task)">Delete</button>
+  <span class="error" *ngIf="descriptionFormControl.dirty && descriptionFormControl.hasError('required')">It must not be empty</span>
 
 </form>
