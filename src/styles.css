@@ -2,7 +2,7 @@
 
 * {
   outline: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
   font-size: 20px;
@@ -99,8 +99,8 @@
 .task input[type="text"],
 .new-task input[type="text"] {
   border: none;
-  top: 2px;
   position: relative;
+  line-height: 24px;
 }
 
 .task input[type="text"] {
@@ -144,20 +144,17 @@
 .task button.remove {
   background-color: #fff;
   color: dimgray;
-  font-size: 22px;
+  font-size: 24px;
   display: inline-block;
   position: relative;
-  font-weight: bold;
-  opacity: .1;
-  top: 2px;
+  opacity: 0;
   border: 1px solid dimgray;
-  width: 22px;
-  height: 22px;
-  padding-bottom: 4px;
+  width: 24px;
+  height: 24px;
   float: right;
-  border-radius: 22px;
+  border-radius: 24px;
   transition: all .4s;
-  line-height: 10px;
+  line-height: 22px;
 }
 
 .task button.remove:after {
@@ -197,4 +194,14 @@
   padding-top: 10px;
   border-top: 1px solid #e0e0e0;
   text-align: right;
+  position: relative;
+}
+
+.filter-options .count {
+  display: block;
+  position: absolute;
+}
+
+.filter-options .count span {
+  font-size: 12px;
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ViewChildren} from "@angular/core";
 import {TaskService} from "../task.service";
 import {Task} from "../task";
 import {TaskStatusPipe} from "../task-status.pipe";
