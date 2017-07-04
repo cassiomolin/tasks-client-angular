@@ -2,9 +2,9 @@
 
   <input type="checkbox" id="complete-task-{{task.id}}" [(ngModel)]="task.completed" formControlName="completed"/>
   <label for="complete-task-{{task.id}}"></label>
-  <input type="text" placeholder="Enter a description" [(ngModel)]="task.description" formControlName="description"/>
+  <input type="text" placeholder="What needs to be done?" [(ngModel)]="task.description" formControlName="description"/>
   <button type="button" class="remove" (click)="deleteTask(task)"></button>
 
-  <span class="error" *ngIf="descriptionFormControl.dirty && descriptionFormControl.hasError('required')">It must not be empty</span>
+  <span class="error" *ngIf="descriptionFormControl.dirty && descriptionFormControl.hasError('required')">It cannot be empty</span>
 
 </form>

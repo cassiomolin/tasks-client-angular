@@ -1,8 +1,8 @@
 <form class="new-task" [formGroup]="taskForm" (ngSubmit)="createTask()">
 
-  <input type="text" placeholder="Add a new task" formControlName="description" autofocus #description/>
+  <input type="text" placeholder="What needs to be done?" formControlName="description" autofocus #description/>
   <button class="add" type="submit" [disabled]="taskForm.invalid"></button>
 
-  <span class="error" *ngIf="descriptionFormControl.dirty && descriptionFormControl.hasError('required')">It must not be empty</span>
+  <span class="error" *ngIf="descriptionFormControl.dirty && descriptionFormControl.hasError('required')">It cannot be empty</span>
 
 </form>
