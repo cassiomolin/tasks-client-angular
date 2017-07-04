@@ -12,12 +12,16 @@ before_script:
 script:
   - ng build --prod
   - make dist
-  
+
+cache:
+  directories:
+    - node_modules
+    
 deploy:
   provider: releases
   api_key:
     secure: "V/tVZBLHrweGsdjVUKrwP43BkWH3+RCcO+jTk09PLvwa1O0gNINQZ+X/k7F4Apgps/gr8C6IRo+Ul0b5UjbXeLOWsC8ywE6Rn4qrSt8XPMfv6uSMZE3vKMeQn1hK5F+viajjuwZzmEP4y+7cQXgSmmXhr6ejaDGPqXfGSgRCwnP57NAEtbfm455RrZk75yL4fOzA1jDAQEXERoIS6iQebrkdCFTC7N9X2v6vIuuXOPDoF3OcZK8ksYDGnxDbyUGXKaasDUQgTjcARKCdBLzYSRS9cFKf/uD1lt0/5hcYrRd0+vD+ts8cjJkXRZ9aRMEkMGXaILdrgxvQmf3DkuuK7CQKGxlRIHSpnBP9SCIkEb17CFINLaY3tzCc1jipFg4rA64fMhcT/EXIJ2rzLxvoSm27wC+LLezxZReWTyBoO6SqNNii4pcPMk7P9Qh7JMia3UJi8CMFSwjbkS2n1jyq4mmj/fEgtAhxnJ8GstdxshZJ5K9SQL9OAV7MlaRTJ1ikcqfa4hykGBkwz4LiZ0PrPwGgip0GPw2RzpmVPgn0LdBQlSp50ID7/GmgoE2uzUVCeBIU8D5ZBkZqZv1NtTFx72YRMMS+CUZssRg159udbHHPEZHFizC07+njtS6Efn7yozTd7CXKoiw5dKmv8EDdZFPXtnDFfh64GN1lRMHSENg="
-  file: release.zip
+  file: dist
   skip_cleanup: true
   on:
     tags: true
