@@ -11,3 +11,12 @@ before_script:
 
 script:
   - ng build --prod
+  - make dist
+  
+deploy:
+  provider: releases
+  api_key: ${api-key}
+  file: release.zip
+  skip_cleanup: true
+  on:
+    tags: true
