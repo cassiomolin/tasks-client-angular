@@ -31,6 +31,10 @@
   opacity: 1;
 }
 
+.new-task button.add:disabled {
+  display: none;
+}
+
 .new-task:hover button.add,
 .new-task input[type="text"]:focus + button.add {
   opacity: 1;
