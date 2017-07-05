@@ -7,7 +7,7 @@ This application, written in **Angular** and **TypeScript**, intends to be a cli
 
 <img src="src/doc/screenshot.png" width="600">
 
-For better maintainability, client and server applications source code are kept in different repositories. The realease artifacts can be downloaded [here](realease artifacts).
+For better maintainability, client and server applications source code are kept in different repositories. The realease artifacts can be downloaded [here](https://github.com/cassiomolin/tasks-frontend-angular/releases).
 
 ## Angular CLI
 
@@ -26,4 +26,3 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 
 [tasks server project]: https://github.com/cassiomolin/tasks-springboot-jersey
-[release artifacts]: https://github.com/cassiomolin/tasks-frontend-angular/releases
