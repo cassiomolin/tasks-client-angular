@@ -5,9 +5,9 @@
 
 This application, written in **Angular** and **TypeScript**, intends to be a client application for the [`tasks-springboot-jersey`][tasks server project] project:
 
-<img src="src/doc/screenshot.png" width="600">
+<img src="src/doc/screenshot.png">
 
-For better maintainability, client and server applications source code are kept in different repositories. The realease artifacts can be downloaded [here](https://github.com/cassiomolin/tasks-frontend-angular/releases).
+For better maintainability, client and server applications source code are kept in different repositories. The client application realease artifacts can be downloaded [here](https://github.com/cassiomolin/tasks-frontend-angular/releases) and can be packed as static resources in a server application.
 
 ## Angular CLI
 
