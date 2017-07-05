@@ -28,8 +28,8 @@ export class TaskRegisterComponent implements OnInit {
   }
 
   createTask(): void {
-    let task = this.taskForm.value;
-    this.taskService.createTask(task).subscribe(task => {
+    let description = this.descriptionFormControl.value;
+    this.taskService.createTask(description).subscribe(task => {
       this.taskForm.reset();
       this.descriptionElement.nativeElement.focus();
     });

@@ -2,7 +2,7 @@
   <app-task-detail *ngFor="let task of tasks | taskStatus:filter" [task]="task" #someVar></app-task-detail>
 </div>
 
-<form class="filter-options">
+<form class="controls">
 
   <!-- There may be a better way to achieve it -->
   <div class="count" [ngSwitch]="(tasks | taskStatus:filter)?.length">
@@ -11,7 +11,18 @@
     <span *ngSwitchDefault>{{(tasks | taskStatus:filter)?.length}} tasks</span>
   </div>
 
-  <input id="show-all"  type="radio" [(ngModel)]="filter" name="filter" value="all"/><label for="show-all">All</label>
-  <input id="show-todo" type="radio" [(ngModel)]="filter" name="filter" value="todo"><label for="show-todo">Active</label>
-  <input id="show-done" type="radio" [(ngModel)]="filter" name="filter" value="done"><label for="show-done">Completed</label>
+  <button class="plain" type="button" (click)="deleteCompletedTasks()">Clear completed</button>
+
+  <div class="filters">
+
+    <input id="show-all" type="radio" [(ngModel)]="filter" name="filter" value="all"/>
+    <label for="show-all">All</label>
+
+    <input id="show-todo" type="radio" [(ngModel)]="filter" name="filter" value="todo"/>
+    <label for="show-todo">Active</label>
+
+    <input id="show-done" type="radio" [(ngModel)]="filter" name="filter" value="done"/>
+    <label for="show-done">Completed</label>
+  </div>
+
 </form>

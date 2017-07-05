@@ -107,35 +107,6 @@
   width: calc(100% - 40px);
 }
 
-.filter-options input[type="radio"] {
-  opacity: 0;
-  position: absolute;
-}
-
-.filter-options label {
-  font-size: 12px;
-}
-
-.filter-options input[type="radio"] + label {
-  display: inline-block;
-  position: relative;
-  padding: 5px;
-  cursor: pointer;
-  user-select: none;
-  border: 2px solid transparent;
-  transition: all .4s, border-color .4s;
-  border-radius: 22px;
-}
-
-.filter-options input[type="radio"]:checked + label {
-  border-color: #ffab91;
-}
-
-.filter-options input[type="radio"] + label:hover,
-.filter-options input[type="radio"]:focus + label {
-  border-color: #ff5722;
-}
-
 .new-task button.add,
 .task button.remove {
   background-color: #fff;
@@ -179,18 +150,59 @@
   left: 35px;
 }
 
-.filter-options {
+.controls * {
+  font-size: 12px;
+}
+
+.controls {
   padding: 10px 20px;
   border-top: 1px solid #e0e0e0;
   text-align: right;
   position: relative;
 }
 
-.filter-options .count {
-  display: block;
+.controls .count {
+  display: table;
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+  padding: 7px 0;
+}
+
+.controls button.plain {
+  display: inline-block;
+  float: left;
+}
+
+.controls button.filters {
+  display: inline-block;
+  position: relative;
+}
+
+.controls input[type="radio"] {
+  opacity: 0;
   position: absolute;
 }
 
-.filter-options .count span {
-  font-size: 12px;
+.controls button.plain,
+.controls input[type="radio"] + label {
+  background: none;
+  display: inline-block;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
+  border: 2px solid transparent;
+  transition: all .4s, border-color .4s;
+  border-radius: 22px;
+}
+
+.controls input[type="radio"]:checked + label {
+  border-color: #ffab91;
+}
+
+.controls button.plain:hover,
+.controls input[type="radio"] + label:hover,
+.controls input[type="radio"]:focus + label {
+  border-color: #ff5722;
 }

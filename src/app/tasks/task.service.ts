@@ -1,8 +1,8 @@
 import {EventEmitter, Injectable} from "@angular/core";
 import {Task} from "./task";
 import {Observable} from "rxjs/Observable";
-import "rxjs/add/observable/of";
 import {Headers, Http} from "@angular/http";
+import "rxjs/add/observable/of";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/toPromise";
 import "rxjs/add/operator/mergeMap";
@@ -28,11 +28,9 @@ export class TaskService {
       .map(response => response.json() as Task[]);
   }
 
-  createTask(task: Task): Observable<Task> {
+  createTask(description: string): Observable<Task> {
 
-    task.completed = false;
-
-    return this.http.post(`${environment.apiUrl}/tasks`, JSON.stringify(task), {headers: this.headers})
+    return this.http.post(`${environment.apiUrl}/tasks`, JSON.stringify({description}), {headers: this.headers})
       .map(response => {
         return response.headers.get("Location")
       })
@@ -63,6 +61,13 @@ export class TaskService {
       .flatMap(() => {
         this.taskDeleted.emit(task);
         return Observable.of(task)
+      });
+  }
+
+  deleteCompletedTasks(): Observable<any> {
+    return this.http.delete(`${environment.apiUrl}/tasks`, {params: {completed: true}})
+      .flatMap(() => {
+        return Observable.of(null);
       });
   }
 }
