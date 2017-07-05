@@ -2,12 +2,32 @@ import {Component, OnInit} from "@angular/core";
 import {TaskService} from "../task.service";
 import {Task} from "../task";
 import {TaskStatusPipe} from "../task-status.pipe";
+import {animate, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css'],
-  providers: [TaskStatusPipe]
+  providers: [TaskStatusPipe],
+  animations: [
+    trigger(
+      'fade',
+      [
+        transition(
+          ':enter', [
+            style({'opacity': 0}),
+            animate('500ms', style({'opacity': 1}))
+          ]
+        ),
+        transition(
+          ':leave', [
+            style({'opacity': 1}),
+            animate('500ms', style({'opacity': 0}))
+          ]
+        )
+      ]
+    )
+  ]
 })
 export class TaskListComponent implements OnInit {
 

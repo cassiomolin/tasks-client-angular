@@ -9,6 +9,7 @@ import {TaskDetailComponent} from "./tasks/task-detail/task-detail.component";
 import {TaskService} from "./tasks/task.service";
 import {TaskStatusPipe} from "./tasks/task-status.pipe";
 import {HttpModule} from "@angular/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpModule} from "@angular/http";
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [TaskService],
   bootstrap: [AppComponent]
