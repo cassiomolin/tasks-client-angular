@@ -202,6 +202,7 @@
 }
 
 .controls button.plain:hover,
+.controls button.plain:focus,
 .controls input[type="radio"] + label:hover,
 .controls input[type="radio"]:focus + label {
   border-color: #ff5722;

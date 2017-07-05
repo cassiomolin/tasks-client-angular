@@ -11,7 +11,7 @@
     <span *ngSwitchDefault>{{(tasks | taskStatus:filter)?.length}} tasks</span>
   </div>
 
-  <button class="plain" type="button" (click)="deleteCompletedTasks()">Clear completed</button>
+  <button class="plain" type="button" (click)="deleteCompletedTasks()" *ngIf="(tasks | taskStatus:'done')?.length > 0">Clear completed</button>
 
   <div class="filters">
 
