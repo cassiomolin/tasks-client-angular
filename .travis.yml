@@ -2,16 +2,22 @@ language: node_js
 node_js:
   - "7"
 
-branches:
-  only:
-    - master
-
 before_script:
   - npm install -g @angular/cli
 
 script:
   - ng build --prod
+  - zip -r dist.zip dist
 
 cache:
   directories:
     - node_modules
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "ZDV2bVvBOA12DxlJN5memklNxr8xRee4rK1BzgsWgI2YQWbljz9jhRO1HxWegUF22yGGCA3vN1KDIgDsAhRAIVA8znlVCnQhikQnX1L8AeHpTRNDknbOIt8nayPQNAPdMn1U6bkK5blFnkjNEvvAmWovQ20ggCu5y0/X9vz4SghVPLxVPUYWsR3m/Yrhu88C+dAmgH/1Li7dyHrr9YL1LvjEHIjF1Ufber5wRwEW+mWUQHR3IcE1HrmadpnsxSKQcbvTHLEO+sjty+jHiuSZcf6Ox/u+V3Z8HR0JxtPmTEthGwUATowZtXF9ynBQCnRiF9ORfuixiHrAVr9G2ECeyUxqNCXZ9GQdFj3QBUHVzw1+N5mpYqdFQaxQyRywztnoifDTKHXPPobfecSDLETPUOh6IFHX8fIrBobFo2q0pKIxxERRs8hPJCyRGCjmrALccNtusjQMxa+a5pcYjMiXpgbgIZpsSkAIt5nTpXfkHPiMDKgql1tIhL3a3zHTKpR5s/kcWQkTm6gNOHoO5teJjLWde6tSSYLcOLWFsj2ZcE2Xbqj0IabUTpbQmZFo+lC4UGCJ6P1h/KqopsS2eQe1iKl/HQmdIUDeFzLzxQdL5l8YHfywszRtegduuPMJD1z3i9gQutgi+06p65tIQ5hUGaD604BHJ/2vCaPA5z9BiIs="
+  file: dist.zip
+  skip_cleanup: true
+  on:
+    tags: true
