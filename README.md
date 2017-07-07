@@ -1,13 +1,13 @@
 # Sample client application for managing tasks using Angular and TypeScript
 
-[![Build Status](https://travis-ci.org/cassiomolin/tasks-frontend-angular.svg?branch=master)](https://travis-ci.org/cassiomolin/tasks-frontend-angular)
-[![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cassiomolin/tasks-frontend-angular/master/LICENSE.txt)
+[![Build Status](https://travis-ci.org/cassiomolin/tasks-client-angular.svg?branch=master)](https://travis-ci.org/cassiomolin/tasks-client-angular)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cassiomolin/tasks-client-angular/master/LICENSE.txt)
 
-This application, written in **Angular** and **TypeScript**, intends to be a client application for the [`tasks-springboot-jersey`][tasks server project] project:
+This application, written in **Angular** and **TypeScript**, intends to be a client application for the [`tasks-rest-api`][tasks server project] project:
 
 <img src="src/doc/screenshot.png">
 
-For better maintainability, client and server applications source code are kept in different repositories. The client application realease artifacts can be downloaded [here](https://github.com/cassiomolin/tasks-frontend-angular/releases) and can be packed as static resources in a server application.
+For better maintainability, client and server applications source code are kept in different repositories. The client application realease artifacts can be downloaded [here](https://github.com/cassiomolin/tasks-client-angular/releases) and can be packed as static resources in a server application.
 
 ## Angular CLI
 
@@ -25,4 +25,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Before running the tests make sure you are serving the app via `ng serve`.
 
 
-[tasks server project]: https://github.com/cassiomolin/tasks-springboot-jersey
+[tasks server project]: https://github.com/cassiomolin/tasks-rest-api
