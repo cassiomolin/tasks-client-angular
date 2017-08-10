@@ -9,10 +9,6 @@ script:
   - ng build --prod
   - zip -r dist.zip dist
 
-cache:
-  directories:
-    - node_modules
-
 deploy:
   provider: releases
   api_key:
